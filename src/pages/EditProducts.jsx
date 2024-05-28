@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import { toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
 
 const EditProducts = () => {
   const course = useLoaderData();
@@ -33,6 +37,7 @@ const EditProducts = () => {
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
+      toast.success("successful");
   };
 
   return (

@@ -5,6 +5,7 @@ import { useEffect } from "react";
 
 const Login = () => {
   const { signIn, user } = useAuth();
+  // console.log(user)
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -17,7 +18,7 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    console.log(email, password);
+    // console.log(email, password);
 
     await signIn(email, password);
   };
