@@ -65,7 +65,7 @@ const Navbar = () => {
             )}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <img className="h-8 rounded-xl" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmE8PmU6WoZK3kh9ywZLlzYoODdkNkQLz6NA&s" alt="" />
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -110,6 +110,5 @@ const Navbar = () => {
     </div>
   );
 };
-
 
 export default Navbar;

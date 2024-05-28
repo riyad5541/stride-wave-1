@@ -9,6 +9,10 @@ import Dashboard from "../pages/Dashboard";
 import MainLayout from "../layouts/MainLayout";
 import Registration from "../pages/Registration";
 import PrivateRoute from "./private/PrivateRoute";
+import ProductDetails from "../pages/ProductDetails";
+import AllProducts from "../pages/AllProducts";
+import AddProducts from "../pages/AddProducts";
+import EditProducts from "../pages/EditProducts";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +25,12 @@ export const router = createBrowserRouter([
         element: <Home />,
         loader: () => fetch("http://localhost:3000/courses"),
 
+      },
+      {
+        path: "/products/:id",
+        element: <ProductDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/courses/${params.id}`),
       },
       {
         path: "/about",
@@ -42,12 +52,39 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { 
-        path: "",
+        path: "home",
         element: (
           <PrivateRoute>
             <Dashboard />
           </PrivateRoute>
         ),
-      }],
+      },
+      {
+        path: "all-products",
+        element: (
+          <PrivateRoute>
+            <AllProducts />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "add-products",
+        element: (
+          <PrivateRoute>
+            <AddProducts />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "all-products/edit/:id",
+        element: (
+          <PrivateRoute>
+            <EditProducts />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/courses/${params.id}`),
+      },
+    ],
   },
 ]);

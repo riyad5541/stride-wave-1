@@ -7,7 +7,7 @@ const Products = ({ data }) => {
     console.log(data)
   return (
     <div>
-      <h1 className="my-8 text-2xl font-bold text-center">Our Products</h1>
+      <h1 className="my-8 text-2xl font-bold text-center">Our Courses</h1>
 
       <div className="flex gap-2 px-6 justify-center items-center ">
         {
