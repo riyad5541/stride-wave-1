@@ -1,4 +1,4 @@
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -33,7 +33,6 @@ const AddProducts = () => {
   
     return (
       <div>
-        <ToastContainer />
         <h1 className="text-5xl font-bold text-center">Add a Product</h1>
   
         <div className="my-16">
